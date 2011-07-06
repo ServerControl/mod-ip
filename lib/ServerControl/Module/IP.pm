@@ -45,7 +45,9 @@ sub start {
    my ($name, $path) = ($class->get_name, $class->get_path);
    my $args = ServerControl::Args->get;
 
-   my $cmd = "ip addr add " . $args->{"ip"};
+   my $ip = ServerControl::Schema->get("ip");
+
+   my $cmd = "$ip addr add " . $args->{"ip"};
    if($args->{"netmask"}) {
       $cmd .= "/".$args->{"netmask"};
    }
