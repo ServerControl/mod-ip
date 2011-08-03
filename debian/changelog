@@ -1,4 +1,11 @@
+servercontrol-mod-ip (0.94) unstable; urgency=low
+
+  * added status codes
+
+ -- Sascha Guenther <sg@gitco.de>  Wed, 03 Aug 2011 17:00:00 +0200
+
 servercontrol-mod-ip (0.93) unstable; urgency=low
+
   * inital module
 
  -- Jan Gehring <jan.gehring@gmail.com>  Wed, 06 Jul 2011 17:00:00 +0200

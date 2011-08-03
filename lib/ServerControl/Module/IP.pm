@@ -98,8 +98,22 @@ sub status {
    my ($class) = @_;
 
    my ($name, $path) = ($class->get_name, $class->get_path);
+   my $args = ServerControl::Args->get;
 
-   ...
+   unless($args->{"dev"}) {
+      die("No dev specified.");
+   }
+
+   my $cmd = "ip a s ".$args->{"dev"}." | grep -q ".$args->{"ip"};
+
+   spawn("$cmd");
+   
+   if ($? == 0) { 
+     return 1;
+   } 
+
+   return 0;
+
 }
 
 
